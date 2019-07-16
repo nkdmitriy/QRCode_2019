@@ -1,0 +1,10 @@
+</form>
+<h2>Уважаемый, {{ firstname }}. Подтвердите личность</h2>
+<h4>Временно выводим телефон студента - {{ phone }}</h4>
+<form method="POST">
+    {% csrf_token %}
+    <ul>
+    {{ form }}
+    </ul>
+    <input type="submit" value="Подтвердить" >
+</form>

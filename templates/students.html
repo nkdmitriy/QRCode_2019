@@ -1,0 +1,15 @@
+<h1>Найдите свое ФИО в списке и подтвердите присутствие</h1>
+{% if liststudents %}
+    <ul>
+    {% for student in liststudents %}
+		<!-- Ссылка на конкретную лекцию с lection.id в названии по примеру:-->
+		<!-- url 'polls:detail' question.id -->
+		<li><a href="{% url 'validphone' lection student.id %}">{{ student.surname }} {{ student.firstname }} {{ student.patronymic }}</a></li>
+    {% endfor %}
+    </ul>
+	<p>Не нашли свое ФИО в списке? Обратитесь к лектору.</p>
+{% else %}
+    <p>Страница пуста. Возможные причины:
+	<p>1. В выбранной группе нет студентов. В этом случае обратитесь к администратору.</p>
+	<p>2. Все студенты подтвердили свое присутствие.</p>
+{% endif %}

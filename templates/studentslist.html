@@ -1,0 +1,12 @@
+<h1>Посещаемость группы</h1>
+{% if liststudents %}
+    <ul>
+    {% for st in liststudents %}
+		<!-- Ссылка на конкретную лекцию с lection.id в названии по примеру:-->
+		<!-- url 'polls:detail' question.id -->
+		<li><a href="{% url 'save_success' %}">{{ st.surname }} {{ st.firstname }} {{ st.patronymic }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
